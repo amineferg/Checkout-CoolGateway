@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="6.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.5" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CoolGateway.Application\CoolGateway.Application.csproj" />
+    <ProjectReference Include="..\CoolGateway.Domain\CoolGateway.Domain.csproj" />
+    <ProjectReference Include="..\CoolGateway.SharedKernel\CoolGateway.SharedKernel.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+  	<AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
+  	  <_Parameter1>CoolGateway.Api.IntegrationTests</_Parameter1>
+  	</AssemblyAttribute>
+  </ItemGroup>
+  <ItemGroup>
+  	<!-- For Moq to mock internal class objects -->
+  	<AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+  	  <_Parameter1>DynamicProxyGenAssembly2</_Parameter1>
+  	</AssemblyAttribute>
+  </ItemGroup>
+
+</Project>
